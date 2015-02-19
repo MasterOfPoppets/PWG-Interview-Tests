@@ -1,0 +1,12 @@
+<html ng-app='pwg.q1.app'>
+  <head>
+    <title>FizzBuzz!</title>
+  </head>
+  <body ng-controller='PWGQ1Ctrl'>
+    <h1>FizzBuzz!</h1>
+    <p ng-repeat='item in fizzBuzz track by $index'>{{ item }}</p>
+    
+    <script src='../lib/angular.min.js'></script>
+    <script src='index.js'></script>
+  </body>
+</html>
