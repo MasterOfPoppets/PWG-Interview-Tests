@@ -1,0 +1,15 @@
+<html ng-app='pwg.q3.app'>
+  <head>
+    <title>PWG Trading Limited - AngularJS Job Interview Exercise</title>
+  </head>
+  <body ng-controller='PWGQ3Ctrl'>
+    <h1>AngularJS job interview exercise</h1>
+    <select ng-model='selectedColour' ng-options='colour.label group by getColourGrouping(colour) for colour in colours | orderByColourGroup track by colour.id'>
+      <option value='' disabled selected>Select a colour...</option>
+    </select>
+    <p>Selected colour id: {{ selectedColour.id }}</p>
+    
+    <script src='../lib/angular.min.js'></script>
+    <script src='index.js'></script>
+  </body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>PWG Trading Limited - AngularJS Job Interview Exercise</title>
+
+    <script type="application/javascript">
+        var colour_groups = [
+            {"id": 4, "label": "Stains", "sort_order": 1},
+            {"id": 1, "label": "Special RALs", "sort_order": 2},
+            {"id": 2, "label": "Fired Earth", "sort_order": 3},
+            {"id": 3, "label": "Farrow and Ball", "sort_order": 4}
+        ];
+
+        var colours = [
+            // Normal colours, no grouping
+            {"id": 1, "label": "Signal White (RAL 9003)"},
+            {"id": 2, "label": "Anthracite Grey (RAL 7016)"},
+            {"id": 3, "label": "Black Brown (RAL 8022)"},
+            {"id": 4, "label": "Black Grey (RAL 7021)"},
+            {"id": 5, "label": "Black Red (RAL 3007)"},
+
+            // Special RAL colours
+            {"id": 6, "label": "Agate Grey (RAL 7038)", "group_id": 1},
+            {"id": 7, "label": "Antique Pink (RAL 3014)", "group_id": 1},
+            {"id": 8, "label": "Azure Blue (RAL 5009)", "group_id": 1},
+            {"id": 9, "label": "Basalt Grey (RAL 7012)", "group_id": 1},
+            {"id": 10, "label": "Beige (RAL 1001)", "group_id": 1},
+
+            // Fired Earth colours
+            {"id": 11, "label": "57th Street", "group_id": 2},
+            {"id": 12, "label": "A Day by the Sea", "group_id": 2},
+            {"id": 13, "label": "A Dip in the Lake", "group_id": 2},
+            {"id": 14, "label": "A La Ronde", "group_id": 2},
+            {"id": 15, "label": "Abbey Yellow", "group_id": 2},
+
+            // Colour stains
+            {"id": 46, "label": "Dark Oak", "group_id": 4},
+            {"id": 47, "label": "Light Oak", "group_id": 4},
+            {"id": 48, "label": "Calvados", "group_id": 4},
+            {"id": 49, "label": "Cherry", "group_id": 4},
+            {"id": 20, "label": "Cyprys", "group_id": 4},
+
+            // Farrow and Ball colours
+            {"id": 21, "label": "All White", "group_id": 3},
+            {"id": 22, "label": "Ammonite", "group_id": 3},
+            {"id": 23, "label": "Archive", "group_id": 3},
+            {"id": 24, "label": "Arsenic", "group_id": 3},
+            {"id": 25, "label": "Babouche", "group_id": 3},
+            {"id": 26, "label": "Ball Green", "group_id": 3}
+        ];
+
+	    //You may wish to use these function stubs, or create your own
+            function getColourGroupName(colour_group_id) {
+            }
+
+            $scope.getColourGrouping = function (colour) {
+            }
+    </script>
+</head>
+<body>
+<h1>AngularJS job interview exercise</h1>
+<p>Using the data-structures present in <code>colour_groups</code> and <code>colours</code>, render the following HTML select drop-down using AngularJS:</p>
+
+<form id="example-form">
+    <label for="colours">Colour:</label>
+    <select id="colours">
+        <option value="">Select a colour&hellip;</option>
+
+        <option value="1">Signal White (RAL 9003)</option>
+        <option value="2">Anthracite Grey (RAL 7016)</option>
+        <option value="3">Black Brown (RAL 8022)</option>
+        <option value="4">Black Grey (RAL 7021)</option>
+        <option value="5">Black Red (RAL 3007)</option>
+
+        <optgroup label="Stains">
+            <option value="16">Dark Oak</option>
+            <option value="17">Light Oak</option>
+            <option value="18">Calvados</option>
+            <option value="19">Cherry</option>
+            <option value="20">Cyprys</option>
+        </optgroup>
+
+        <optgroup label="Special RALs">
+            <option value="6">Agate Grey (RAL 7038)</option>
+            <option value="7">Antique Pink (RAL 3014)</option>
+            <option value="8">Azure Blue (RAL 5009)</option>
+            <option value="9">Basalt Grey (RAL 7012)</option>
+            <option value="10">Beige (RAL 1001)</option>
+        </optgroup>
+
+        <optgroup label="Fired Earth">
+            <option value="11">57th Street</option>
+            <option value="12">A Day by the Sea</option>
+            <option value="13">A Dip in the Lake</option>
+            <option value="14">A La Ronde</option>
+            <option value="15">Abbey Yellow</option>
+        </optgroup>
+
+        <optgroup label="Farrow and Ball">
+            <option value="21">All White</option>
+            <option value="22">Ammonite</option>
+            <option value="23">Archive</option>
+            <option value="24">Arsenic</option>
+            <option value="25">Babouche</option>
+            <option value="26">Ball Green</option>
+        </optgroup>
+    </select>
+</form>
+
+<h2>Things to note:</h2>
+<ul>
+    <li>Each option's value attribute should be the ID value of the colour it holds</li>
+    <li>Each option's text label value should be the label value of the colour it holds</li>
+    <li>Where a colour has an associated colour group, it should be presented in an option group, sorted by the individual group sort ranking number (present in "<code>sort_order</code>" key)</li>
+    <li>Colours without an associated colour group should be presented at the top of the select list (without an option group)</li>
+    <li>The first list option should ideally have the text label of "Select a colour..." and an empty option value attribute</li>
+</ul>
+
+<h2>As a starting point, you may wish to use this form control:</h2>
+<code>
+<form ng-app="PwgColourExample" ng-controller="colourController" id="example-form">
+    <label for="colours">Colour:</label>
+    <select id="colours"
+            ng-model="selectedColour"
+            ng-options="">
+        <option value="">Select a colour...</option>
+    </select>
+</form>
+</code>
+
+</body>
+</html>
